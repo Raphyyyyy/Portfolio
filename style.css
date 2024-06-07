@@ -1,0 +1,65 @@
+/* limpa os css */
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* remove formatação dos links e coloca o efeito*/
+a {
+    color: inherit; 
+    text-decoration: none; 
+    transition: font-weight 0.3s; 
+}
+
+a:hover {
+    font-weight: bold; 
+}
+
+/* começa css do menu */
+header div{
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0;
+    background: rgba(252, 239, 228, 0.50);
+    position:absolute;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+}
+
+
+menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+
+}
+
+h3{
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    letter-spacing: 4.9px;
+}
+
+header .menu-bola{
+    display: flex;
+    justify-content: right;
+    align-items:center;
+    gap: 13px;
+    width: 35px;
+    margin-left: 45px;
+    flex-shrink: 0;
+    
+    max-width: 100%;
+    height: auto;
+}
+/* acaba css do menu */
