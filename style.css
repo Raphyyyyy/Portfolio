@@ -64,3 +64,48 @@ header .menu-bola2 {
 
 /* acaba css do menu */
 
+/* começa css do main */
+
+/* sobre mim */
+.sobre-mim {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-image: url(public/images/fundoa-1.png);
+    padding: 20px;
+}
+
+.sobre-mim img{
+    width: 50%;
+    height: auto;
+    margin: 5% 10%;
+}
+
+.sobre-mim-texto{
+    display: flex;
+    flex-direction: column;
+}
+
+.sobre-mim h1{
+    position: absolute;
+    color: #EBA672;
+    font-family: Heebo;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.sobre-mim p{
+    color: #000;
+    font-family: Heebo;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 12px;
+    background: rgba(247, 215, 191, 0.69);
+    box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+
+}
