@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+
+/* fonte */
+.heebo {
+  font-family: "Heebo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 /* remove formatação dos links e coloca o efeito*/
 a {
     color: inherit; 
@@ -117,7 +126,7 @@ header .menu-bola2 {
     border-radius: 12px;
     padding: 40px;
     width: 55%;
-    height:500px;
+    height:auto;
     background: rgba(247, 215, 191, 0.69);
     box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -128,3 +137,14 @@ header .menu-bola2 {
 }
 
 /* fim do sobre-mim */
+
+
+h2{
+    color: #000;
+    font-family: heebo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-left: 15%;
+}
