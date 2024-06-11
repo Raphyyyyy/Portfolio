@@ -28,6 +28,11 @@ header div {
     position: relative; 
 }
 
+header .garca {
+    width: 100%;
+    height: auto;
+}
+
 menu {
     display: flex;
     justify-content: center;
@@ -79,7 +84,7 @@ header .menu-bola2 {
 .sobre-mim img{
     width: 50%;
     height: auto;
-    margin: 5% 10%;
+    margin: 5%;
 }
 
 .sobre-mim-texto{
@@ -88,24 +93,38 @@ header .menu-bola2 {
 }
 
 .sobre-mim h1{
-    position: absolute;
+    position: relative;
     color: #EBA672;
     font-family: Heebo;
-    font-size: 12px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+    font-weight: bolder;
+    line-height:normal;
+    margin-bottom: 5px;
+    margin-left: 20px;
 }
 
-.sobre-mim p{
+.sobre-mim p {
+    display: flex;
+    align-items: center;
+    justify-items: center;
     color: #000;
     font-family: Heebo;
-    font-size: 12px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     border-radius: 12px;
+    padding: 40px;
+    width: 55%;
+    height:500px;
     background: rgba(247, 215, 191, 0.69);
     box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
-
 }
+
+.sobre-mim p::before {
+    content: "";
+    z-index: -1;
+}
+
+/* fim do sobre-mim */
