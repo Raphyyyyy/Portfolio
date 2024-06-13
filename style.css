@@ -222,8 +222,9 @@ padding: 10px;
 
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color:#eba6723f;
+    background-color:#552e109a;
     margin: 50px;
+    border-radius: 15%;
     padding: 25%; /* Aumenta a área clicável */
 }
 
@@ -234,5 +235,10 @@ padding: 10px;
 
 .carousel li{
     list-style: none;
+
 }
 
+/* Cor do indicador ativo */
+.carousel-indicators .active {
+    background-color: black; 
+}
