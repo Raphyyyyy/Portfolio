@@ -159,6 +159,7 @@ main{
 
 /* fim do sobre-mim */
 
+/* começa habilidades */
 
 h2{
     color: #000;
@@ -202,7 +203,27 @@ padding: 10px;
     margin: 5%
 }
 
+/* acaba .habilidades */
 
+/* começa formação */
+
+.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.idioma{
+    align-self:flex-start ;
+    background-color: #eba67280;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.idioma::before{
+    content: "";
+    z-index: -1;
+}
 
 
 /* para ocupar 100% da largura da tela */
