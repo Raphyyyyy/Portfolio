@@ -268,14 +268,110 @@ padding: 10px;
     z-index: -1;
 }
 
+/* comeca projetos */
 
+
+
+
+/* .projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    min-width: 550px;
+    min-height: 100%;
+}
+
+
+#item1, #item2, #item3 {
+    flex-basis: 25%;
+    height: 50%;
+}
+
+#item1 {
+    background-color: blueviolet;
+}
+
+#item2 {
+    background-color: rgb(0, 110, 255);
+}
+
+#item3 {
+    background-color: rgb(0, 255, 85);
+}
+
+#item4 {
+    flex-basis: 25%;
+    height: 100%;
+    background-color: rgb(0, 255, 221);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    order: 2;
+}
+
+#item5 {
+    flex-basis: 75%;
+    height: 50%;
+    background-color: rgb(215, 147, 255);
+    order: 1; 
+}  */
+
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0px;
+    min-width: 550px;
+    min-height: 100%;
+}
+
+#item1 {
+    background-color: blueviolet;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#item2 {
+    background-color: rgb(0, 110, 255);
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#item3 {
+    background-color: rgb(0, 255, 85);
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#item4 {
+    background-color: rgb(0, 255, 221);
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    height: 100%;
+}
+
+#item5 {
+    background-color: rgb(215, 147, 255);
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+
+
+/* fim de projetos */
+
+
+
+
+
+/* começa carrossel */
 /* para ocupar 100% da largura da tela */
 .carousel {
     width: 100%;
 
 }
-
-
 
 .carousel-control-prev, .carousel-control-next {
     width: auto;
@@ -306,3 +402,5 @@ padding: 10px;
 .carousel-indicators .active {
     background-color: black; 
 }
+
+
