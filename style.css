@@ -170,13 +170,17 @@ h2{
     line-height: normal;
     margin-left: 5%;
     margin-right: 150px;
+    white-space: nowrap;
 }
 .habilidades-pai{
     background: #f5b6762a;
     position: relative;
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+    min-width: 550px;
 
 }
 
@@ -188,6 +192,7 @@ h2{
     flex-direction: row;
     margin: 5%;
     height: 566px;
+    min-width: 550px;
     min-height: 100%;
 
 }
@@ -198,10 +203,25 @@ padding: 10px;
 }
 
 .habilidades img{
-    width: 150%;
+    width: 85px;
     height: auto;
     margin: 5%
 }
+
+.habilidades h1{
+
+    color:  rgb(71, 32, 0);
+    font-family: "Heebo", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height:normal;
+    margin-left: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
 
 /* acaba .habilidades */
 
@@ -210,7 +230,30 @@ padding: 10px;
 .container{
     display: flex;
     justify-content: space-between;
+    max-width: 75%;
 
+
+}
+
+
+#formacao{
+    border-radius: 12px;
+    padding: 40px;
+    margin-left: 0px;
+    min-width: 550px;
+    height:auto;
+    background: rgba(247, 215, 191, 0.69);
+    box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.fundo{
+    border-radius: 12px;
+    padding: 40px;
+    margin-right: 145px;
+    min-width: 550px;
+    height:auto;
+    background: rgba(247, 215, 191, 0.69);
+    box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .idioma{
@@ -229,7 +272,7 @@ padding: 10px;
 /* para ocupar 100% da largura da tela */
 .carousel {
     width: 100%;
-    overflow: visible; 
+
 }
 
 
