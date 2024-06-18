@@ -5,19 +5,47 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+/* fonte */
+.heebo {
+  font-family: "Heebo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+  }
+
+
+
+
+
+  
+
 /* remove formatação dos links e coloca o efeito*/
 a {
-    color: inherit; 
-    text-decoration: none; 
-    transition: font-weight 0.3s; 
+    font-family: "Inter", sans-serif;
+    color: inherit;
+    text-decoration: none;
+    transition: font-weight 0.3s;
 }
 
 a:hover {
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* começa css do menu */
-header div {
+header nav {
     width: 100%;
     height: 48px;
     flex-shrink: 0;
@@ -25,7 +53,12 @@ header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; 
+    position: relative;
+}
+
+header .garca {
+    width: 100%;
+    height: auto;
 }
 
 menu {
@@ -33,7 +66,7 @@ menu {
     justify-content: center;
     align-items: center;
     gap: 13px;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 
 h3 {
@@ -52,13 +85,13 @@ h3 {
 header .menu-bola,
 header .menu-bola2 {
 
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 2%;
     flex-shrink: 0;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 
@@ -66,7 +99,14 @@ header .menu-bola2 {
 
 /* começa css do main */
 
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove o espaço entre os elementos*/
+}
+
 /* sobre mim */
+
 .sobre-mim {
     display: flex;
     justify-content: center;
@@ -74,12 +114,14 @@ header .menu-bola2 {
     flex-direction: row;
     background-image: url(public/images/fundoa-1.png);
     padding: 20px;
+    margin: 0;
 }
 
 .sobre-mim img{
     width: 50%;
+    min-width: 450px;
     height: auto;
-    margin: 5% 10%;
+    margin: 5%;
 }
 
 .sobre-mim-texto{
@@ -88,24 +130,268 @@ header .menu-bola2 {
 }
 
 .sobre-mim h1{
-    position: absolute;
+    position: relative;
     color: #EBA672;
-    font-family: Heebo;
-    font-size: 12px;
+    font-family: "Heebo", sans-serif;
+    font-size: 18px;
     font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+    font-weight: bolder;
+    line-height:normal;
+    margin-bottom: 5px;
+    margin-left: 20px;
 }
 
-.sobre-mim p{
+.sobre-mim p {
+    display: flex;
+    align-items: center;
+    justify-items: center;
     color: #000;
-    font-family: Heebo;
-    font-size: 12px;
+    font-family: "Heebo", sans-serif;
+    font-size: 18x;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     border-radius: 12px;
+    padding: 40px;
+    width: 55%;
+    min-width: 550px;
+    height:auto;
     background: rgba(247, 215, 191, 0.69);
     box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.sobre-mim p::before {
+    content: "";
+    z-index: -1;
+}
+
+/* fim do sobre-mim */
+
+/* começa habilidades */
+
+h2{
+    color: #000;
+    font-family: heebo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-left: 5%;
+    margin-right: 150px;
+    white-space: nowrap;
+}
+.habilidades-pai{
+    background: #f5b6762a;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 20px;
+    min-width: 550px;
 
 }
+
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 5%;
+    height: 566px;
+    min-width: 550px;
+    min-height: 100%;
+
+}
+
+.habilidades td{
+padding: 10px;
+
+}
+
+.habilidades img{
+    width: 85px;
+    height: auto;
+    margin: 5%
+}
+
+.habilidades h1{
+
+    color:  rgb(71, 32, 0);
+    font-family: "Heebo", sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height:normal;
+    margin-left: 10px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+/* acaba .habilidades */
+
+/* começa formação */
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 75%;
+
+
+}
+
+
+#formacao{
+    border-radius: 12px;
+    padding: 40px;
+    margin-left: 0px;
+    min-width: 550px;
+    height:auto;
+    background: rgba(247, 215, 191, 0.69);
+    box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.fundo{
+    border-radius: 12px;
+    padding: 40px;
+    margin-right: 145px;
+    min-width: 550px;
+    height:auto;
+    background: rgba(247, 215, 191, 0.69);
+    box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.idioma{
+    align-self:flex-start ;
+    background-color: #eba67280;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.idioma::before{
+    content: "";
+    z-index: -1;
+}
+
+/* comeca projetos */
+
+
+#pg-pai {
+    background-image: url('public/images/ONDA.jpg');
+    background-size: cover;  
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 125vh;  
+}
+
+.pg-novo {
+    width: 100%;  /* Garante que o elemento ocupe toda a largura */
+    height: 100%;  /* Garante que o elemento ocupe toda a altura */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 0px;
+    padding: 5%; 
+}
+
+
+.pg-novo img{
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0;
+    border-radius: 30px;
+    display: block;
+}
+
+#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9{
+    padding: 25px;
+    align-self: center;
+    justify-self: start;
+}
+
+.pg-novo div {
+    padding: 0; /* Remova o padding */
+    margin: 0;  /* Remova a margem */
+}
+
+#item1 img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 0;
+    border-radius: 30px;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#item1:hover img {
+    opacity: 0;
+}
+
+#item1:hover {
+    background-image: url('public/images/SPOTIFY PREMIUM GIF.gif');
+    background-size: cover;  /* Garante que a imagem cubra todo o elemento */
+    background-repeat: no-repeat;  /* Evita que a imagem se repita */
+    background-position: center center;  /* Centraliza a imagem */
+    border-radius: 30px;
+}
+
+/* fim de projetos */
+
+
+
+
+
+
+
+
+
+/* começa carrossel */
+/* para ocupar 100% da largura da tela */
+.carousel {
+    width: 100%;
+
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: auto;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color:#552e109a;
+    margin: 50px;
+    border-radius: 15%;
+    padding: 25%; /* Aumenta a área clicável */
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    background-color: #eba672;
+
+}
+
+.carousel li{
+    list-style: none;
+
+}
+
+/* Cor do indicador ativo */
+.carousel-indicators .active {
+    background-color: black; 
+}
+
+
+
+
+

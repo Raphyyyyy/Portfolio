@@ -3,27 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <!-- tag para compatibilidade com navegadores do edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
     <!-- fontes -->
 
-
-
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- css -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- kit de icones do fontawesome -->
+    <script src="https://kit.fontawesome.com/65b5eadf2a.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- parallax -->
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+
+
 
     <title>Portfolio de Rafael Nunes</title>
 </head>
 
 <body>
+
+
     <header>
-        <div>
+        <nav class="navbar navbar-expand-lg fixed-top" role="navigation"><!-- deixa o menu fixo no topo -->
+
             <menu>
                 <h3>
-                    <a href="http://">
+                    <a class="nav-item" href="teste.html">
                         SOBRE MIM
                     </a>
                 </h3>
@@ -31,28 +52,28 @@
                 <img src="public/images/ellipse-4.svg" alt="">
 
                 <h3>
-                    <a href="http://">
+                    <a class="nav-item" href="http://">
                         HABILIDADES
                     </a>
                 </h3>
 
                 <img src="public/images/ellipse-4.svg" alt="">
                 <h3>
-                    <a href="http://">
+                    <a class="nav-item" href="http://">
                         PAGINAS
                     </a>
                 </h3>
 
                 <img src="public/images/ellipse-4.svg" alt="">
                 <h3>
-                    <a href="http://">
+                    <a class="nav-item" href="http://">
                         DESIGN
                     </a>
                 </h3>
 
                 <img src="public/images/ellipse-4.svg" alt="">
                 <h3>
-                    <a href="http://">
+                    <a class="nav-item" href="http://">
                         CONTATO
                     </a>
                 </h3>
@@ -62,15 +83,15 @@
             <img class="menu-bola" src="public/images/brasil.svg" alt="Idioma/Language">
             <img class="menu-bola2" src="public/images/eye.svg" alt="Modo Escuro/Claro">
 
-        </div>
-        <img src="public/images/garça4.gif" alt="">
+        </nav>
+        <img class="garca" src="public/images/garça4.gif" alt="">
 
 
     </header>
 
     <main>
         <!-- SOBRE MIM -->
-        <div class="sobre-mim">
+        <div class="sobre-mim" id="sobre-mim-pai">
             <img src="public/images/foto-terno-b-1.png" alt="">
 
             <div class="sobre-mim-texto">
@@ -79,25 +100,325 @@
                     com minha paixão pela organização, fluidez de processos e otimização de atividades no
                     desenvolvimento de software. Reconhecido por minha confiabilidade e boa comunicação, tenho
                     habilidades sólidas em resolver problemas complexos e implementar soluções inovadoras, graças à
-                    minha criatividade e capacidade de liderança.</p>
-                <br><br>
-                <p>Com uma forte aptidão para trabalho em equipe, valorizo as contribuições dos
+                    minha criatividade e capacidade de liderança.
+                    <br><br>
+                    Com uma forte aptidão para trabalho em equipe, valorizo as contribuições dos
                     colegas e lidero de forma colaborativa em projetos desafiadores, buscando
                     soluções eficazes e escaláveis. Sou adaptável a diferentes ambientes e situações, comprometido em
-                    aprender continuamente e me atualizar com as últimas tecnologias e práticas de programação.</p>
-                <br><br>
-                <p>Embora minha formação seja em Engenharia Civil, desenvolvi habilidades em 
-                    programação e design de forma autodidata e estou determinado a destacar-me como programador profissional. 
-                    
+                    aprender continuamente e me atualizar com as últimas tecnologias e práticas de programação.
+                    <br><br>
+                    Embora minha formação seja em Engenharia Civil, desenvolvi habilidades em
+                    programação e design de forma autodidata e estou determinado a destacar-me como programador
+                    profissional.
+
                 </p>
             </div>
             <!-- sobre mim texto -->
- 
+
         </div>
         <!-- sobre mim -->
 
+        <!-- HABILIDADES -->
+        <div class="habilidades-pai" id="habilidades-pai">
+
+
+
+
+            <div id="mainSlider" class="carousel slide">
+                <!-- item que mostra em qual pagina está -->
+                <ol class="carousel-indicators d-flex">
+                    <li data-bs-target="#mainSlider" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#mainSlider" data-bs-slide-to="1"></li>
+                </ol>
+
+
+
+                <!-- aqui começa o carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="habilidades  w-100">
+
+
+                            <div class="fundo">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <h1>Habilidades</h1>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/css-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>CSS</h2>
+                                            </td>
+
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/javascript-2.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>JAVASCRIPT</h2>
+                                            </td>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/shopee-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>MARKETPLACES</h2>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/adobe-photoshop-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>PHOTOSHOP</h2>
+                                            </td>
+
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/react-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>REACT/HOOK</h2>
+                                            </td>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/facebook-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>FACEBOOK ADS</h2>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/vscode-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>VSCODE</h2>
+                                            </td>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/sql-database-generic-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>SQL/BANCO DE DADOS</h2>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/github-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>GITHUB</h2>
+                                            </td>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/figma-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>FIGMA</h2>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/html-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>HTML</h2>
+                                            </td>
+                                            <td>
+                                                <!-- icones -->
+                                                <img src="public/images/microsoft-office-1.svg" alt="">
+                                            </td>
+                                            <td class="td-texto">
+                                                <!-- descrição -->
+                                                <h2>MICROSOFT OFFICE</h2>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="habilidades  w-100">
+                            <div class="container fundo" id="formacao">
+                                <div>
+                                    <table>
+                                        <tbody>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <h1>Formação</h1>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tr>
+                                                <td><img src="public/images/tec-info.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>TÉC. DE INFORMÁTICA - UNIVAP (2009)</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/tec-comex.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>TÉC. COMERCIO EXTERIOR - CEPHAS (2012)</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/bach-markt.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>BACH. PUBLICIDADE E MARKETING - UNIP (2014)</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/bach-civil.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>BACH. ENG CIVIL - UNIP (2019)</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/trybe-1.png" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>FRONT END DEV - TRYBE (2024)</h2>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="idioma">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <h1>Idiomas</h1>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="public/images/br.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>PORTUGUÊS: FLUENTE</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/usa.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>INGLÊS: AVANÇADO</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="public/images/mexico.svg" alt="" srcset=""></td>
+                                                <td>
+                                                    <h2>ESPANHOL: INTERMEDIÁRIO</h2>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- setas -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainSlider"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- HABILIDADES -->
+
+        <!-- PAGINAS -->
+
+        <div id="pg-pai">
+            <div class="pg-novo">
+                <div id="item1"><img src="public/images/Spotify cover.png" alt="" srcset=""></div>
+                <div id="item2"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item3"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item4"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item5"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item6"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item7"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item8"><img src="public/images/em breve.png" alt="" srcset=""></div>
+                <div id="item9"><img src="public/images/em breve.png" alt="" srcset=""></div>
+
+
+            </div>
+        </div>
+ 
+
+        <!-- FIM DO PAGINAS  -->
+
+
+
 
     </main>
+
+
+
+
+    <!-- Bootstrap JavaScript Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- outros scripts -->
+    <script src="js/scripts.js"></script>
+
+
+
 
 </body>
 
