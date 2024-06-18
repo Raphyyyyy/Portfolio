@@ -82,17 +82,20 @@ h3 {
 }
 
 /* icones de bola */
-header .menu-bola,
-header .menu-bola2 {
+header .menu-bola {
 
-    margin-left: auto;
-    margin-right: 2%;
+    margin: 10px;
     flex-shrink: 0;
     width: 35px;
     height: 35px;
     border-radius: 50%;
     overflow: hidden;
 }
+
+header .menu-bola:hover {
+    border: 2px solid #64520000;
+}
+
 
 
 /* acaba css do menu */
@@ -346,7 +349,25 @@ padding: 10px;
 
 /* fim de projetos */
 
+/* whats app */
+.whats {
 
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 100;
+}
+
+.whats img {
+    display: block;
+    width: 50px;
+    transition: transform 1s ease-in-out;
+}
+
+.whats img:hover {
+    transform: scale(1.9);  /* Aumenta a escala da imagem para 1.9 vezes o tamanho original */
+}
+/* whats app */
 
 
 
