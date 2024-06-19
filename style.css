@@ -416,3 +416,57 @@ padding: 10px;
 
 
 
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    menu {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sobre-mim {
+        flex-direction: column;
+    }
+
+    .sobre-mim img, .sobre-mim p {
+        width: 90%;
+        min-width: 0;
+    }
+
+    .habilidades {
+        flex-direction: column;
+    }
+
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    #formacao, .fundo {
+        width: 90%;
+        min-width: 0;
+        margin: 20px 0;
+    }
+
+    .pg-novo {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+    }
+
+    .whats {
+        right: 2%;
+        bottom: 2%;
+    }
+
+    .whats img {
+        width: 40px;
+    }
+
+    footer p {
+        font-size: 18px;
+    }
+}
