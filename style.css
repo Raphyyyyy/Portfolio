@@ -82,17 +82,17 @@ h3 {
 }
 
 /* icones de bola */
-header .menu-bola {
+.menu-bola {
 
     margin: 10px;
     flex-shrink: 0;
-    width: 35px;
+    width: 35px; 
     height: 35px;
     border-radius: 50%;
     overflow: hidden;
 }
 
-header .menu-bola:hover {
+.menu-bola:hover {
     border: 2px solid #64520000;
 }
 
@@ -111,25 +111,44 @@ main{
 /* sobre mim */
 
 .sobre-mim {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    display: grid;
+    align-items: center; 
+    justify-items: center; 
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: 1fr; 
+    gap: 0px;
+    padding: 20px; 
     background-image: url(public/images/fundoa-1.png);
-    padding: 20px;
     margin: 0;
+    }
+
+#sobre1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 15%;
 }
 
-.sobre-mim img{
+#sobre1 img {
     width: 50%;
     min-width: 450px;
     height: auto;
-    margin: 5%;
+
+}
+
+#sobre2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2%;
+
 }
 
 .sobre-mim-texto{
     display: flex;
     flex-direction: column;
+
 }
 
 .sobre-mim h1{
@@ -143,6 +162,8 @@ main{
     margin-bottom: 5px;
     margin-left: 20px;
 }
+
+
 
 .sobre-mim p {
     display: flex;
@@ -241,7 +262,7 @@ padding: 10px;
 .container{
     display: flex;
     justify-content: space-between;
-    max-width: 75%;
+    max-width: 100%;
 
 
 }
