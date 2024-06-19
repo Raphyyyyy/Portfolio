@@ -429,6 +429,12 @@ padding: 10px;
         max-width: fit-content;
     }
 
+    header .menu-bola {
+        width: 15px;
+        height: 15px;
+        margin: 2px;
+    }
+
     h3{
         font-size: 8px;
     }
