@@ -424,8 +424,13 @@ padding: 10px;
     }
 
     menu {
-        flex-direction: column;
+
         gap: 5px;
+        max-width: fit-content;
+    }
+
+    h3{
+        font-size: 8px;
     }
 
     .sobre-mim {
