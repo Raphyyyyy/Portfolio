@@ -145,6 +145,14 @@ main{
 
 }
 
+#sobre3 {
+    display: flex;
+    flex-direction: row; /* Padrão: Coluna */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os itens */
+}
+
 .sobre-mim-texto{
     display: flex;
     flex-direction: column;
@@ -450,11 +458,22 @@ padding: 10px;
         max-width: fit-content;
     }
 
-    header .menu-bola {
-        width: 15px;
-        height: 15px;
+    .menu-bola {
+        width: 35px;
+        height: 35px;
         margin: 2px;
     }
+
+    header .menu-bola{
+        display: none;
+    }
+
+
+
+    #sobre3 {
+        flex-direction: row; /* Altere a direção para linha */
+    }
+
 
     h3{
         font-size: 8px;
@@ -463,6 +482,7 @@ padding: 10px;
     .sobre-mim {
         flex-direction: column;
     }
+
 
     .sobre-mim img, .sobre-mim p {
         width: 90%;
