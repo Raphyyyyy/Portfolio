@@ -324,15 +324,15 @@ padding: 10px;
 
 
 #pg-pai {
-    background-image: url('public/images/ONDA.jpg');
-    background-size: cover;  
-    background-repeat: no-repeat; 
-    background-position: center center; 
+    background-image: url('public/images/flor-fundo.png');
+    background-repeat: repeat; 
+
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 125vh;  
+    height: 125vh;
+
 }
 
 .pg-novo {
@@ -459,6 +459,8 @@ padding: 10px;
 
 /* Media Queries */
 @media (max-width: 768px) {
+
+    /* começa menu */
     header nav {
         flex-direction: column;
         height: auto;
@@ -479,7 +481,9 @@ padding: 10px;
     header .menu-bola{
         display: none;
     }
+    /* termina menu */
 
+    /* começa sobre mim */
     #sobre2-texto {
         position: relative;
       }
@@ -531,7 +535,7 @@ padding: 10px;
         width: 90%;
         min-width: 0;
     }
-
+    /* termina sobre mim  */
 
     /* comeca habilidades */
 
@@ -566,6 +570,14 @@ padding: 10px;
 
     /* termina .habilidades */
 
+
+
+    /* começa paginas */
+
+    #pg-pai {
+        height: auto;
+    }
+    /* termina paginas  */
 
     .container {
         flex-direction: column;
