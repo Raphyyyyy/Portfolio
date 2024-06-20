@@ -496,7 +496,7 @@ padding: 10px;
         overflow: hidden;
         border: solid 2px #ffffff;
         position: absolute;
-        top: 24%; 
+        top: 28%; 
         left: 42%;
         z-index: 2;
         transform: translateX(-50%);
@@ -566,9 +566,6 @@ padding: 10px;
 
     /* termina .habilidades */
 
-    /* .habilidades {
-        flex-direction: column;
-    } */
 
     .container {
         flex-direction: column;
