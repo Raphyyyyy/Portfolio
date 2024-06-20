@@ -122,6 +122,14 @@ main{
     margin: 0;
     }
 
+
+
+  #foto-bolha{
+    display: none;
+ }    
+
+
+
 #sobre1 {
     display: flex;
     justify-content: center; 
@@ -224,6 +232,10 @@ h2{
 
 }
 
+#habilidades-mobile{
+    display: none;
+}
+
 
 .habilidades {
     display: flex;
@@ -248,7 +260,7 @@ padding: 10px;
     margin: 5%
 }
 
-.habilidades h1{
+.habilidades h1, #habilidades-mobile h1{
 
     color:  rgb(71, 32, 0);
     font-family: "Heebo", sans-serif;
@@ -468,7 +480,38 @@ padding: 10px;
         display: none;
     }
 
+    #sobre2-texto {
+        position: relative;
+      }
 
+    .sobre-mim h1{
+        display: none;
+    }
+
+    #foto-bolha{
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: solid 2px #ffffff;
+        position: absolute;
+        top: 24%; 
+        left: 42%;
+        z-index: 2;
+        transform: translateX(-50%);
+    }
+
+    .sobre-mim p {
+    width: 100%;
+    min-width: auto;
+    padding: 20px;
+    position: relative;
+  }
+
+    #sobre1{
+        display: none;
+    }
 
     #sobre3 {
         flex-direction: row; /* Altere a direção para linha */
@@ -489,9 +532,43 @@ padding: 10px;
         min-width: 0;
     }
 
-    .habilidades {
-        flex-direction: column;
+
+    /* comeca habilidades */
+
+    .habilidades{
+        display: none;
     }
+
+    #habilidades-mobile{
+        background-image: url(public/images/garça4.gif);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    #habilidades-mobile td{
+        display: flex;
+        align-items: center; 
+        margin: 0; 
+        padding: 0;
+    }
+    
+    #habilidades-mobile img{
+        display: block; 
+        margin-right: 5px;
+    }
+    
+    #habilidades-mobile h2{
+        margin: 5%; 
+        padding: 0;
+    }
+
+
+    /* termina .habilidades */
+
+    /* .habilidades {
+        flex-direction: column;
+    } */
 
     .container {
         flex-direction: column;
