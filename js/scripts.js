@@ -17,7 +17,7 @@ window.onresize = updateText;
 
 
 
-
+//-------------------------------------------------------------------------------------------------------------//
 //script do fundo html
 let montanha = document.getElementById('montanha');
 let pagoda = document.getElementById('pagoda');
