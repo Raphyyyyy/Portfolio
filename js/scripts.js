@@ -14,3 +14,76 @@ window.onload = updateText;
 
 // Adiciona um evento de redimensionamento para atualizar o texto quando a janela for redimensionada
 window.onresize = updateText;
+
+
+
+
+//script do fundo html
+let montanha = document.getElementById('montanha');
+let pagoda = document.getElementById('pagoda');
+let garca = document.getElementById('garca');
+let sol = document.getElementById('sol');
+let nuvem = document.getElementById('nuvem');
+let headTexto = document.getElementById('head-texto');
+
+//esses objetos ficam estaticos
+window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+
+    montanha.style.top = value * 0.5 + 'px';
+    pagoda.style.top = value * 0.5 + 'px';
+    // headTexto.style.top = value * 0.5 + 'px';
+
+
+});
+
+
+//aumenta a pagoda
+window.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    let scaleValue = 1 + value * 0.001; // Ajuste o fator de escala conforme necessário
+    const maxScale = 2; // Defina o limite máximo de escala
+
+    if (scaleValue > maxScale) {
+        scaleValue = maxScale;
+    }
+    pagoda.style.transform = `scale(${scaleValue})`;
+});
+
+
+window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    nuvem.style.left = value * 0.9 + 'px';
+});
+
+window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    sol.style.left = value * 0.9 + 'px';
+    sol.style.top = value * 0.9 + 'px';
+});
+
+//para a animacao da garca quando fora da tela
+function isElementInViewport(el) {
+const rect = el.getBoundingClientRect();
+return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+window.addEventListener('scroll', function(){
+    if (!isElementInViewport(garca)) {
+        garca.style.animationPlayState = 'paused';
+    } else {
+        garca.style.animationPlayState = 'running';
+    }
+});
+
+
+
+// Força a animação de blur ao carregar a página
+window.addEventListener('load', function() {
+headTexto.style.animation = 'blurIn 2s ease-out';
+});
