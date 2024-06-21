@@ -7,6 +7,8 @@
 
 html, body {
     height: 100%;
+    margin: 0;
+ 
 }
 
 /* fonte */
@@ -107,6 +109,169 @@ main{
     flex-direction: column;
     gap: 0; /* Remove o espaço entre os elementos*/
 }
+
+/* fundo html */
+#header{
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#fcd0ad,#fff0e1,#fff0e1);
+    z-index: -5;
+    overflow-x: hidden; /* Evita que o conteúdo saia da tela no eixo x */
+}
+
+#header h1{
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 7.5vw;
+    letter-spacing: 2px;
+    text-shadow: 20px 20px 50px rgb(0, 0, 0);
+}
+
+#header p{
+    color: #ffffff;
+    font-size: 1.5vw;
+    margin-top: 20px;
+}
+
+#header hr{
+    border: none; /* Remove a borda padrão */
+    height: 2px; /* Define a altura da linha */
+    background-color: #ff9b28; /* Cor de fundo da linha */
+    width: 20%; /* Largura da linha */
+    margin: 20px auto; /* Espaçamento ao redor e centraliza na horizontal */
+}
+
+#header img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+#montanha{
+    position: absolute;
+    padding-top: 15%;
+    top: -50%;
+    left: 0%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#pagoda{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: auto;
+    height: 100vh;
+    z-index: 2;
+
+}
+
+#nuvem{
+    width: 200vh;
+    z-index: -4;
+}
+
+#sol{
+    position: absolute;
+    transform: translate(100%, -25%);
+    z-index: -3;
+}
+
+/* anima a garça */
+@keyframes moveGarca {
+    0% { left: -10%; }
+    100% { left: 110%; }
+}
+
+#garca {
+    padding-top: 25px;
+    position: absolute;
+    animation: moveGarca 15s linear infinite;
+    z-index: 1;
+}
+
+@keyframes blurIn {
+    0% {
+        filter: blur(10px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+#head-texto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    animation: blurIn 2s ease-out;
+}
+
+/* Regras responsivas */
+@media (max-width: 768px) {
+    #header {
+        padding: 50px;
+    }
+
+    #header h1 {
+        font-size: 8vw;
+    }
+
+    #header p {
+        font-size: 1em;
+    }
+
+    #header hr {
+        width: 50%;
+    }
+
+    .teste1 {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header {
+        padding: 30px;
+    }
+
+    #header h1 {
+        font-size: 12vw;
+    }
+
+    #header p {
+        font-size: 0.9em;
+    }
+
+    #header hr {
+        width: 70%;
+    }
+
+    .teste1 {
+        padding: 10px;
+    }
+}
+/* acaba fundo html */
+
+
 
 /* sobre mim */
 
@@ -324,15 +489,15 @@ padding: 10px;
 
 
 #pg-pai {
-    background-image: url('public/images/ONDA.jpg');
-    background-size: cover;  
-    background-repeat: no-repeat; 
-    background-position: center center; 
+    background-image: url('public/images/flor-fundo.png');
+    background-repeat: repeat; 
+
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 125vh;  
+    height: 125vh;
+
 }
 
 .pg-novo {
@@ -459,6 +624,8 @@ padding: 10px;
 
 /* Media Queries */
 @media (max-width: 768px) {
+
+    /* começa menu */
     header nav {
         flex-direction: column;
         height: auto;
@@ -479,7 +646,9 @@ padding: 10px;
     header .menu-bola{
         display: none;
     }
+    /* termina menu */
 
+    /* começa sobre mim */
     #sobre2-texto {
         position: relative;
       }
@@ -489,13 +658,14 @@ padding: 10px;
     }
 
     #foto-bolha{
+
         display: block;
         width: 45px;
         height: 45px;
         border-radius: 50%;
         overflow: hidden;
         border: solid 2px #ffffff;
-        position: absolute;
+        position: relative;
         top: 28%; 
         left: 42%;
         z-index: 2;
@@ -531,7 +701,7 @@ padding: 10px;
         width: 90%;
         min-width: 0;
     }
-
+    /* termina sobre mim  */
 
     /* comeca habilidades */
 
@@ -566,6 +736,14 @@ padding: 10px;
 
     /* termina .habilidades */
 
+
+
+    /* começa paginas */
+
+    #pg-pai {
+        height: auto;
+    }
+    /* termina paginas  */
 
     .container {
         flex-direction: column;

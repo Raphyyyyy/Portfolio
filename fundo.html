@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+        <div id="head-texto">
+            <h1>Portfolio Pessoal</h1><br>
+            <hr>
+            <p>Rafael Nunes - Desenvolvedor Front End</p>
+        </div>  
+        <img src="public/teaser/montanha.png" id="montanha">
+        <img src="public/teaser/pagoda.png" id="pagoda">
+        <img src="public/teaser/garça2.gif" id="garca">
+        <img src="public/teaser/sol.png" id="sol">
+        <img src="public/teaser/NUVENS2.png" id="nuvem">
+    </header>
+    
+    <!-- <div class="teste1">
+        <h1>texto</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, modi quos deserunt explicabo ex saepe sapiente nam laborum, quaerat delectus quae, consequatur quasi qui dignissimos temporibus atque eaque at iure. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odio labore ad sint quos culpa eligendi laudantium voluptatum mollitia necessitatibus voluptates omnis aliquam optio expedita modi, eum temporibus. Molestiae, reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quae fuga nisi? Exercitationem voluptatem, id quod modi molestiae veniam placeat, voluptate maxime incidunt cumque necessitatibus. Placeat a odit quidem quasi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas sunt explicabo veritatis, atque laudantium ipsa eum amet nihil minima culpa fugit, praesentium quam laborum animi voluptates maiores illo modi minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio voluptate iusto et, nemo deserunt cupiditate consequuntur est? Laborum porro quibusdam vel facilis qui accusantium aspernatur cum repellendus ab eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dignissimos quo voluptatem. Expedita ex, omnis in aspernatur, ab nam ullam assumenda labore quibusdam quaerat, repellat rerum iure voluptatum doloremque dicta. <br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, modi quos deserunt explicabo ex saepe sapiente nam laborum, quaerat delectus quae, consequatur quasi qui dignissimos temporibus atque eaque at iure. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odio labore ad sint quos culpa eligendi laudantium voluptatum mollitia necessitatibus voluptates omnis aliquam optio expedita modi, eum temporibus. Molestiae, reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quae fuga nisi? Exercitationem voluptatem, id quod modi molestiae veniam placeat, voluptate maxime incidunt cumque necessitatibus. Placeat a odit quidem quasi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas sunt explicabo veritatis, atque laudantium ipsa eum amet nihil minima culpa fugit, praesentium quam laborum animi voluptates maiores illo modi minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio voluptate iusto et, nemo deserunt cupiditate consequuntur est? Laborum porro quibusdam vel facilis qui accusantium aspernatur cum repellendus ab eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dignissimos quo voluptatem. Expedita ex, omnis in aspernatur, ab nam ullam assumenda labore quibusdam quaerat, repellat rerum iure voluptatum doloremque dicta. <br><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo, modi quos deserunt explicabo ex saepe sapiente nam laborum, quaerat delectus quae, consequatur quasi qui dignissimos temporibus atque eaque at iure. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odio labore ad sint quos culpa eligendi laudantium voluptatum mollitia necessitatibus voluptates omnis aliquam optio expedita modi, eum temporibus. Molestiae, reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quae fuga nisi? Exercitationem voluptatem, id quod modi molestiae veniam placeat, voluptate maxime incidunt cumque necessitatibus. Placeat a odit quidem quasi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas sunt explicabo veritatis, atque laudantium ipsa eum amet nihil minima culpa fugit, praesentium quam laborum animi voluptates maiores illo modi minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis odio voluptate iusto et, nemo deserunt cupiditate consequuntur est? Laborum porro quibusdam vel facilis qui accusantium aspernatur cum repellendus ab eos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dignissimos quo voluptatem. Expedita ex, omnis in aspernatur, ab nam ullam assumenda labore quibusdam quaerat, repellat rerum iure voluptatum doloremque dicta. <br><br>a</p>
+    </div> -->
+
+    <script>
+        let montanha = document.getElementById('montanha');
+        let pagoda = document.getElementById('pagoda');
+        let garca = document.getElementById('garca');
+        let sol = document.getElementById('sol');
+        let nuvem = document.getElementById('nuvem');
+        let headTexto = document.getElementById('head-texto');
+
+        //esses objetos ficam estaticos
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            montanha.style.top = value * 0.5 + 'px';
+            pagoda.style.top = value * 0.5 + 'px';
+            // headTexto.style.top = value * 0.5 + 'px';
+
+
+        });
+
+        
+        //aumenta a pagoda
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            let scaleValue = 1 + value * 0.001; // Ajuste o fator de escala conforme necessário
+            const maxScale = 2; // Defina o limite máximo de escala
+
+            if (scaleValue > maxScale) {
+                scaleValue = maxScale;
+            }
+            pagoda.style.transform = `scale(${scaleValue})`;
+        });
+
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            nuvem.style.left = value * 0.9 + 'px';
+        });
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            sol.style.left = value * 0.9 + 'px';
+            sol.style.top = value * 0.9 + 'px';
+        });
+
+        //para a animacao da garca quando fora da tela
+        function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        window.addEventListener('scroll', function(){
+            if (!isElementInViewport(garca)) {
+                garca.style.animationPlayState = 'paused';
+            } else {
+                garca.style.animationPlayState = 'running';
+            }
+        });
+
+
+
+        // Força a animação de blur ao carregar a página
+        window.addEventListener('load', function() {
+        headTexto.style.animation = 'blurIn 2s ease-out';
+        });
+
+    </script>
+
+</body>
+</html>
