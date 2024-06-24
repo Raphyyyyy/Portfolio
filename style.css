@@ -12,6 +12,12 @@ html, body {
 }
 
 /* fonte */
+
+@font-face {
+    font-family: "Osake";
+    src: url('fonts/osake/Osake.ttf') format('truetype');
+}
+
 .heebo {
   font-family: "Heebo", sans-serif;
   font-optical-sizing: auto;
@@ -217,6 +223,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    letter-spacing: 10px;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -232,7 +239,7 @@ main{
     }
 
     #header h1 {
-        font-size: 8vw;
+        font-size: 6vw;
     }
 
     #header p {
@@ -254,7 +261,12 @@ main{
     }
 
     #header h1 {
-        font-size: 12vw;
+        font-size: 6vw;
+    }
+
+    #header h1::after {
+        content: 'Portfolio Pessoal';
+        display: block;
     }
 
     #header p {
@@ -274,7 +286,6 @@ main{
 
 
 /* sobre mim */
-
 .sobre-mim {
     display: grid;
     align-items: center; 
@@ -285,15 +296,13 @@ main{
     padding: 20px; 
     background-image: url(public/images/fundoa-1.png);
     margin: 0;
-    }
+    width: 100vw;
+    height: 100vh;
+}
 
-
-
-  #foto-bolha{
+#foto-bolha {
     display: none;
- }    
-
-
+}
 
 #sobre1 {
     display: flex;
@@ -306,7 +315,6 @@ main{
     width: 50%;
     min-width: 450px;
     height: auto;
-
 }
 
 #sobre2 {
@@ -315,36 +323,32 @@ main{
     justify-content: center;
     align-items: flex-start;
     margin: 2%;
-
 }
 
 #sobre3 {
     display: flex;
-    flex-direction: row; /* Padrão: Coluna */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Espaçamento entre os itens */
+    gap: 10px;
 }
 
-.sobre-mim-texto{
+.sobre-mim-texto {
     display: flex;
     flex-direction: column;
-
 }
 
-.sobre-mim h1{
+.sobre-mim h1 {
     position: relative;
     color: #EBA672;
     font-family: "Heebo", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: bolder;
-    line-height:normal;
+    line-height: normal;
     margin-bottom: 5px;
     margin-left: 20px;
 }
-
-
 
 .sobre-mim p {
     display: flex;
@@ -352,7 +356,7 @@ main{
     justify-items: center;
     color: #000;
     font-family: "Heebo", sans-serif;
-    font-size: 18x;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -360,15 +364,20 @@ main{
     padding: 40px;
     width: 55%;
     min-width: 550px;
-    height:auto;
+    height: auto;
     background: rgba(247, 215, 191, 0.69);
     box-shadow: 14px 14px 4px 0px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    white-space: pre-line; /* Preserve quebras de linha */
 }
 
 .sobre-mim p::before {
     content: "";
     z-index: -1;
 }
+
+
+
 
 /* fim do sobre-mim */
 
