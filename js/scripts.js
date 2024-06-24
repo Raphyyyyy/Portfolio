@@ -17,7 +17,7 @@ window.onresize = updateText;
 
 
 
-//-------------------------------------------------------------------------------------------------------------//
+//-----------------------------------------------FUNDO----------------------------------------------------------//
 //script do fundo html
 let montanha = document.getElementById('montanha');
 let pagoda = document.getElementById('pagoda');
@@ -87,3 +87,43 @@ window.addEventListener('scroll', function(){
 window.addEventListener('load', function() {
 headTexto.style.animation = 'blurIn 2s ease-out';
 });
+
+//---------------------------------------SOBRE MIM---------------------------------------//
+
+// Animação de digitação
+document.addEventListener("DOMContentLoaded", function() {
+    const sobre2Texto = document.querySelector("#sobre2-texto");
+    const text = sobre2Texto.innerHTML;
+    sobre2Texto.innerHTML = '';
+
+    for (let char of text) {
+        let span = document.createElement('span');
+        span.innerHTML = char;
+        sobre2Texto.appendChild(span);
+    }
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function checkVisibility() {
+        if (isElementInViewport(sobre2Texto)) {
+            const spans = sobre2Texto.querySelectorAll('span');
+            spans.forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.05}s`;
+                span.classList.add('typing');
+            });
+            window.removeEventListener("scroll", checkVisibility);
+        }
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility();
+});
+
