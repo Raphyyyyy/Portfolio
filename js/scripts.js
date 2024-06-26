@@ -1,44 +1,151 @@
-
-// Muda o texto para uma versão resumida de sobre mim quando estiver no mobile
+// Função para mudar o texto para uma versão resumida de sobre mim quando estiver no mobile
 function updateText() {
     const pElement = document.getElementById('sobre2-texto');
     if (window.innerWidth <= 768) {
-        pElement.innerHTML  = 'Sou um entusiasta da programação com forte aptidão para resolver problemas complexos e implementar soluções inovadoras, destacando-me pela confiabilidade, boa comunicação e iderança colaborativa. Embora minha formação seja em Engenharia Civil, adquiri habilidades em programação e design de forma autodidata. Valorizo o trabalho em equipe e contribuo para a organização, fluidez de processos e otimização de atividades no desenvolvimento de software. Adaptável e comprometido com o prendizado contínuo, busco oportunidades para aplicar minhas habilidades e me destacar como programador front end';
+        pElement.innerHTML = 'Sou um entusiasta da programação com forte aptidão para resolver problemas complexos e implementar soluções inovadoras, destacando-me pela confiabilidade, boa comunicação e liderança colaborativa. Embora minha formação seja em Engenharia Civil, adquiri habilidades em programação e design de forma autodidata. Contribuo para a organização, fluidez de processos e otimização de atividades no desenvolvimento de software. Adaptável e comprometido com o aprendizado contínuo, busco oportunidades para aplicar minhas habilidades e me destacar como programador front end';
     } else {
-        pElement.innerHTML  = 'Me chamo Rafael Nunes e sou um entusiasta da programação em busca de oportunidades para contribuir com minha paixão pela organização, fluidez de processos e otimização de atividades no desenvolvimento de software. Reconhecido por minha confiabilidade e boa comunicação, tenho  habilidades sólidas em resolver problemas complexos e implementar soluções inovadoras, graças à        minha criatividade e capacidade de liderança.<br><br>Com uma forte aptidão para trabalho em equipe, valorizo as contribuições dos colegas e lidero de forma colaborativa em projetos desafiadores, buscando  soluções eficazes e escaláveis. Sou adaptável a diferentes ambientes e situações, comprometido em        aprender continuamente e me atualizar com as últimas tecnologias e práticas de programação.        <br><br>Embora minha formação seja em Engenharia Civil, desenvolvi habilidades em programação e design de forma autodidata e estou determinado a destacar-me como programador profissional.';
+        pElement.innerHTML = 'Me chamo Rafael Nunes e sou um entusiasta da programação em busca de oportunidades para contribuir com minha paixão pela organização, fluidez de processos e otimização de atividades no desenvolvimento de software. Reconhecido por minha confiabilidade e boa comunicação, tenho habilidades sólidas em resolver problemas complexos e implementar soluções inovadoras, graças à minha criatividade e capacidade de liderança.<br><br>Com uma forte aptidão para trabalho em equipe, valorizo as contribuições dos colegas e lidero de forma colaborativa em projetos desafiadores, buscando soluções eficazes e escaláveis. Sou adaptável a diferentes ambientes e situações, comprometido em aprender continuamente e me atualizar com as últimas tecnologias e práticas de programação. <br><br>Embora minha formação seja em Engenharia Civil, desenvolvi habilidades em programação e design de forma autodidata e estou determinado a destacar-me como programador profissional.';
+    }
+}
+// Função para escrever o texto letra por letra, respeitando tags HTML
+function typeWriter(element, text, interval) {
+    element.innerHTML = ''; // Limpa o conteúdo do elemento
+    let i = 0;
+    let isTag = false;
+    let timer = setInterval(() => {
+        if (i < text.length) {
+            if (text.charAt(i) === '<') {
+                isTag = true;
+            }
+            element.innerHTML += text.charAt(i);
+            if (text.charAt(i) === '>') {
+                isTag = false;
+                i++; // Avança para o próximo caractere após a tag
+            }
+            if (!isTag) {
+                i++;
+            } else {
+                // Avança dentro da tag inteira
+                i++;
+                while (i < text.length && text.charAt(i) !== '>') {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
+                element.innerHTML += text.charAt(i); // Adiciona o '>'
+                i++; // Avança para o próximo caractere após a tag
+            }
+        } else {
+            clearInterval(timer);
+        }
+    }, interval);
+}
+// Função para escrever o texto letra por letra, respeitando tags HTML
+function typeWriter(element, text, interval) {
+    element.innerHTML = ''; // Limpa o conteúdo do elemento
+    let i = 0;
+    let isTag = false;
+    let timer = setInterval(() => {
+        if (i < text.length) {
+            if (text.charAt(i) === '<') {
+                isTag = true;
+            }
+            if (!isTag) {
+                element.innerHTML += text.charAt(i);
+                i++;
+            } else {
+                let tag = '';
+                while (i < text.length && text.charAt(i) !== '>') {
+                    tag += text.charAt(i);
+                    i++;
+                }
+                tag += '>'; // Adiciona o fechamento da tag
+                element.innerHTML += tag;
+                isTag = false;
+                i++; // Avança para o próximo caractere após a tag
+            }
+        } else {
+            clearInterval(timer);
+        }
+    }, interval);
+}
+
+// Função para iniciar a animação quando o elemento estiver visível
+function startTypingAnimation() {
+    const pElement = document.getElementById('sobre2-texto');
+    if (isElementInViewport(pElement) && !pElement.dataset.animated) {
+        pElement.dataset.animated = true; // Marca o elemento como animado
+        const text = pElement.getAttribute('data-text'); // Obtém o texto original
+        typeWriter(pElement, text, 5); // Inicia a animação de escrita
     }
 }
 
+// Função para verificar se o elemento está na viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
 // Chama a função ao carregar a página
-window.onload = updateText;
+window.onload = function() {
+    updateText(); // Atualiza o texto com base no tamanho da janela
+    const pElement = document.getElementById('sobre2-texto');
+    pElement.setAttribute('data-text', pElement.innerHTML.trim()); // Armazena o texto original (removendo espaços extras)
+    pElement.innerHTML = ''; // Limpa o conteúdo inicial
+    startTypingAnimation(); // Inicia a animação de digitação
+};
 
 // Adiciona um evento de redimensionamento para atualizar o texto quando a janela for redimensionada
-window.onresize = updateText;
+window.onresize = function() {
+    updateText(); // Atualiza o texto com base no tamanho da janela
+    const pElement = document.getElementById('sobre2-texto');
+    pElement.setAttribute('data-text', pElement.innerHTML.trim()); // Atualiza o texto original armazenado
+    pElement.innerHTML = ''; // Limpa o conteúdo para reiniciar a animação
+    pElement.dataset.animated = false; // Reseta a animação
+    startTypingAnimation(); // Reinicia a animação de digitação
+};
 
-
-
+// Adiciona um evento de rolagem para verificar a visibilidade do elemento
+window.addEventListener('scroll', startTypingAnimation);
 //-----------------------------------------------FUNDO----------------------------------------------------------//
-//script do fundo html
+// Script do fundo HTML
 let montanha = document.getElementById('montanha');
 let pagoda = document.getElementById('pagoda');
 let garca = document.getElementById('garca');
 let sol = document.getElementById('sol');
 let nuvem = document.getElementById('nuvem');
 let headTexto = document.getElementById('head-texto');
+let sobreTexto = document.getElementById('sobre-texto');
+let fundoFotoSobreMim = document.getElementById('fundo-ft-sobre-mim');
 
-//esses objetos ficam estaticos
-window.addEventListener('scroll', function(){
+// Fundo do sobre mim
+let montanhaSobre = document.getElementById('montanha-sobre');
+
+// Função para verificar se o elemento está pelo menos parcialmente no viewport
+function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom >= 0
+    );
+}
+
+window.addEventListener('scroll', function() {
     let value = window.scrollY;
 
     montanha.style.top = value * 0.5 + 'px';
     pagoda.style.top = value * 0.5 + 'px';
-    // headTexto.style.top = value * 0.5 + 'px';
 
-
+    if (isElementPartiallyInViewport(montanhaSobre)) {
+        montanhaSobre.style.transform = `translateY(${value * 0.5}px)`;
+    }
 });
 
-
-//aumenta a pagoda
+// Aumenta a pagoda
 window.addEventListener('scroll', function() {
     let value = window.scrollY;
     let scaleValue = 1 + value * 0.001; // Ajuste o fator de escala conforme necessário
@@ -50,30 +157,19 @@ window.addEventListener('scroll', function() {
     pagoda.style.transform = `scale(${scaleValue})`;
 });
 
-
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function() {
     let value = window.scrollY;
     nuvem.style.left = value * 0.9 + 'px';
 });
 
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', function() {
     let value = window.scrollY;
     sol.style.left = value * 0.9 + 'px';
     sol.style.top = value * 0.9 + 'px';
 });
 
-//para a animacao da garca quando fora da tela
-function isElementInViewport(el) {
-const rect = el.getBoundingClientRect();
-return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-window.addEventListener('scroll', function(){
+// Para a animação da garça quando fora da tela
+window.addEventListener('scroll', function() {
     if (!isElementInViewport(garca)) {
         garca.style.animationPlayState = 'paused';
     } else {
@@ -81,49 +177,13 @@ window.addEventListener('scroll', function(){
     }
 });
 
-
-
 // Força a animação de blur ao carregar a página
 window.addEventListener('load', function() {
-headTexto.style.animation = 'blurIn 2s ease-out';
+    headTexto.style.animation = 'blurIn 2s ease-out';
 });
 
-//---------------------------------------SOBRE MIM---------------------------------------//
-
-// Animação de digitação
-document.addEventListener("DOMContentLoaded", function() {
-    const sobre2Texto = document.querySelector("#sobre2-texto");
-    const text = sobre2Texto.innerHTML;
-    sobre2Texto.innerHTML = '';
-
-    for (let char of text) {
-        let span = document.createElement('span');
-        span.innerHTML = char;
-        sobre2Texto.appendChild(span);
-    }
-
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    function checkVisibility() {
-        if (isElementInViewport(sobre2Texto)) {
-            const spans = sobre2Texto.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                span.style.animationDelay = `${index * 0.05}s`;
-                span.classList.add('typing');
-            });
-            window.removeEventListener("scroll", checkVisibility);
-        }
-    }
-
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility();
+// Definir a posição inicial da montanhaSobre ao carregar a página
+window.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    montanhaSobre.style.transform = `translateY(calc(-90% + ${value * 2}px))`;//ela já começa -90 acima do normal
 });
-
