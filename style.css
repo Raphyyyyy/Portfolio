@@ -719,6 +719,7 @@ padding: 10px;
     header nav {
         flex-direction: column;
         height: auto;
+        margin: 0 5px;
     }
 
     menu {
@@ -789,7 +790,7 @@ padding: 10px;
     }
 
     #sobre3{
-        margin-left: 50px;
+        margin-left: 0px;
     }
 
 
