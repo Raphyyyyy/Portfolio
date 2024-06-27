@@ -98,6 +98,7 @@ h3 {
     height: 35px;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .menu-bola:hover {
@@ -376,7 +377,25 @@ main{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-left: 120px;
     gap: 10px;
+}
+
+#sobre3 button {
+    background: #fcd0ad;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: #533001;
+    font-family: "Heebo", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+#sobre3 button:hover {
+    background: #ffba81;
 }
 
 .sobre-mim-texto {
@@ -543,57 +562,72 @@ padding: 10px;
 
 /* comeca projetos */
 
-
 #pg-pai {
     background-image: url('public/images/flor-fundo.png');
-    background-repeat: repeat; 
-
+    background-repeat: repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.pg-header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     justify-content: center;
     width: 100%;
-    height: 125vh;
+    text-align: center;
+}
 
+.pg-header h1 {
+    position: relative;
+    color: #7e5231;
+    font-family: "Heebo", sans-serif;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    margin: 0;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
+}
+
+.pg-header hr{
+    width: 30%;
+    height: 3px; 
+    background-color: #e07c09; 
+    margin: auto;
 }
 
 .pg-novo {
-    width: 100%;  /* Garante que o elemento ocupe toda a largura */
-    height: 100%;  /* Garante que o elemento ocupe toda a altura */
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    gap: 0px;
-    padding: 5%; 
+    grid-gap: 20px;
+    padding: 5%;
+    box-sizing: border-box; 
 }
 
-
-.pg-novo img{
+.pg-novo img {
     width: 100%;
     max-width: 450px;
     height: auto;
-    margin: 0;
     border-radius: 30px;
     display: block;
-}
-
-#item1, #item2, #item3, #item4, #item5, #item6, #item7, #item8, #item9{
-    padding: 25px;
-    align-self: center;
-    justify-self: start;
 }
 
 .pg-novo div {
-    padding: 0; /* Remova o padding */
-    margin: 0;  /* Remova a margem */
+    align-self: center;
+    justify-self: center;
+    padding: 0;
+    margin: 0;
 }
 
 #item1 img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    margin: 0;
-    border-radius: 30px;
-    display: block;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -603,9 +637,9 @@ padding: 10px;
 
 #item1:hover {
     background-image: url('public/images/SPOTIFY PREMIUM GIF.gif');
-    background-size: cover;  /* Garante que a imagem cubra todo o elemento */
-    background-repeat: no-repeat;  /* Evita que a imagem se repita */
-    background-position: center center;  /* Centraliza a imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     border-radius: 30px;
 }
 
@@ -752,6 +786,10 @@ padding: 10px;
 
     .sobre-mim {
         flex-direction: column;
+    }
+
+    #sobre3{
+        margin-left: 50px;
     }
 
 
